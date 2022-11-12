@@ -1,0 +1,201 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Wage Class Prediction</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js">
+    </script>
+    <style>
+            select {
+          // styles reset, including removing the default dropdown arrow
+          //appearance: none;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          
+          //background-color: transparent;
+          border: none;
+          padding: 0 1em 0 0;
+          margin: 0;
+          width: 100%;
+          font-family: inherit;
+          font-size: inherit;
+          cursor: inherit;
+          line-height: inherit;
+        
+          // Stack above custom arrow
+          z-index: 1;
+        
+          // Remove focus outline, will add on alternate element
+          outline: none;
+        }
+            
+      
+      //Custom arrow
+    
+            form input {
+            position: relative;
+            font-family: "Source Sans Pro", sans-serif;
+            font-weight: 600;
+            width: 100%;
+            height: 40px;
+            border: none;
+            padding: 0 10px;
+            box-shadow: none;
+            outline: none;
+            -webkit-transition: all .5s ease;
+            -moz-transition: all .5s ease;
+            -ms-transition: all .5s ease;
+            -o-transition: all .5s ease;
+            transition: all .5s ease;
+        }
+
+            .form.round {
+                border-radius: 40px;
+            }
+
+            .form.shutter-in {
+                border-bottom: 2px solid rgba(0, 0, 0, .2);
+                background: transparent;
+            }
+
+                .form.shutter-in:focus {
+                    border-color: rgba(0, 0, 0, .3);
+                    box-shadow: 0 -50px 0 #d5d5d5 inset;
+                }
+
+        .form label {
+            color: white;
+        }
+        body {
+            background-image: radial-gradient(circle, #353535, #313439, #27343c, #19353b, #0a3535);
+        }
+    </style>
+</head>
+<body padding:50px">
+    <div class="container" style="color:white; margin-top:10px; text-align:center;" >
+            <h1><b>Wage Class Prediction</b></h1>
+    </div>
+    <div class="container" style="width: 600px; margin-top: 30px; ">
+        <form action="/" method="post">
+            <div class="form-group">
+                <label for="id9" style="color: white">Age</label>
+                <input class="form-control" type="number"
+                       id="age" placeholder="Enter Age" step="1" value='17' name="age">
+            </div>
+            <div class="form-group">
+                <label for="Captal_Gains" style="color: white">Captal_Gains</label>
+                <input class="form-control" type="number"
+                       id="Captal_Gains" placeholder="Enter Captal_Gains" step="1000" value='1000' name="Captal_Gains">
+            </div>
+            <div class="form-group">
+                <label for="Hours_per_weeek" style="color: white">Hours_per_weeek</label>
+                <input class="form-control" type="number"
+                       id="Hours_per_weeek" placeholder="Enter Hours_per_weeek" step="1" value='30' name="Hours_per_weeek">
+            </div>
+            <div class="form-group">
+                <label for="relationship" style="color: white">relationship</label><br><br>
+                <!--<input class="form-control" type="number""-->
+                <!--     id="id1" placeholder="Enter Rate_marriage" step="1.0" value='0' name="Rate_marriage">"-->
+                <div class="select">
+                    <select id="relationship" name="relationship" size="3" value=''>
+                        <option value=0 selected> ' Husband'</option>
+                        <option value=1> ' Not-in-family'</option>
+                        <option value=2>' Other-relative'</option>
+                        <option value=3> ' Own-child'</option>
+                        <option value=4> ' Unmarried'</option>
+                        <option value=5>  ' Wife'</option>
+                    </select><br><br>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="marital_status" style="color: white">marital_status</label><br><br>
+                <!--<input class="form-control" type="number""-->
+                <!--     id="id1" placeholder="Enter Rate_marriage" step="1.0" value='0' name="Rate_marriage">"-->
+                <div class="select">
+                    <select id="marital_status" name="marital_status" size="3" value=''>
+                        <option value=0 selected> ' Divorced'</option>
+                        <option value=1> ' Married-AF-spouse'</option>
+                        <option value=2>' Married-civ-spouse'</option>
+                        <option value=3> ' Married-spouse-absent'</option>
+                        <option value=4> ' Never-married'</option>
+                        <option value=5>  ' Separated'</option>
+                        <option value=6>  ' Widowed'</option>
+                    </select><br><br>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="education" style="color: white">education</label><br><br>
+                <!--<input class="form-control" type="number""-->
+                <!--     id="id1" placeholder="Enter Rate_marriage" step="1.0" value='0' name="Rate_marriage">"-->
+                <div class="select">
+                    <select id="education" name="education" size="3" value=''>
+                        <option value=3 selected> 1st-4th</option>
+                        <option value=4> 5th-6th</option>
+                        <option value=5>  7th-8th</option>
+                        <option value=6> 9th</option>
+                        <option value=0> 10th</option>
+                        <option value=1> 11th </option>
+                        <option value=2> 12th</option>
+                        <option value=11> HS-grad </option>
+                        <option value=7>Assoc-acdm</option>
+                        <option value=8> Assoc-voc</option>
+                        <option value=13>Preschool</option>
+                        <option value=14> Prof-school</option>
+                        <option value=15> Some-college</option>
+                        <option value=9> Bachelors</option>
+                        <option value=12> Masters</option>
+                        <option value=10> Doctorate</option>
+
+                    </select><br><br>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="occupation" style="color: white">occupation</label><br><br>
+                <!--<input class="form-control" type="number""-->
+                <!--     id="id1" placeholder="Enter Rate_marriage" step="1.0" value='0' name="Rate_marriage">"-->
+                <div class="select">
+                    <select id="occupation" name="occupation" size="3" value=''>
+                        <option value=0 selected>  Adm-clerical</option>
+                        <option value=1> Armed-Forces</option>
+                        <option value=2>  Craft-repair</option>
+                        <option value=3> Exec-managerial</option>
+                        <option value=4>  Farming-fishing</option>
+                        <option value=5> Handlers-cleaners</option>
+                        <option value=6>  Machine-op-inspct</option>
+                        <option value=7> Other-service</option>
+                        <option value=8>  Priv-house-serv</option>
+                        <option value=9>  Prof-specialty</option>
+                        <option value=10> Protective-serv</option>
+                        <option value=11>  Sales</option>
+                        <option value=12>  Tech-support</option>
+                        <option value=13>  Transport-moving</option>
+                        <option value=14>Non-defined</option>
+                    </select><br><br>
+                </div>
+            </div>
+          
+            <div class="form-group">
+                <label for="Sex" style="color: white">Sex</label>
+                <div class="select">
+                    <select id="Sex" name="Sex" size="2" value='1'>
+                        <option value=1 selected>Male</option>
+                        <option value=0>Female</option>
+                    </select><br><br>
+                </div>
+            </div>
+
+            <div class="container" style="margin-left:30%">
+                <button type="submit" class="btn btn-success" ;>
+                    Submit
+                </button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
